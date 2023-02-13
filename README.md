@@ -1,5 +1,4 @@
-# Machine Learning models
-## Different machine learning models for hair type classification can be compared
+## Different machine learning models for hair type classification
 
 
 ## To segment hair images using trained DeepLabv3 model
