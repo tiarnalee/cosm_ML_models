@@ -1,0 +1,48 @@
+dataset:
+  base_path: /Users/tle19/Documents/cosm/Model hair pics/
+  dataset_name: NUMPY_dataloader1
+image:
+  base_size: 600
+  crop_size: 600
+  out_stride: 16
+inference:
+  batch_size: 2
+network:
+  backbone: resnet
+  freeze_bn: false
+  num_classes: 2
+  sync_bn: false
+  use_cuda: false
+training:
+  batch_size: 16
+  callbacks: null
+  epochs: 2000
+  loss_type: ce
+  lr: 0.00005
+  lr_scheduler: poly
+  model_best_checkpoint:
+    enabled: true
+    monitor: val_loss
+    out_file: ./experiments/best.pth.tar
+  model_last_checkpoint:
+    enabled: false
+    out_file: ./experiments/checkpoint_last.pth.tar
+  momentum: 0.9
+  nesterov: false
+  no_val: false
+  output:
+    output_weights: ./snapshots/best.pth.tar
+  start_epoch: 0
+  tensorboard:
+    enabled: true
+    log_dir: ./tensorboard/
+  train_on_subset:
+    dataset_fraction: 1.0
+    enabled: false
+  use_balanced_weights: false
+  val_interval: 1
+  weight_decay: 0.0005
+  weights_initialization:
+    restore_from: ./experiments/last.pth.tar
+    use_pretrained_weights: false
+  workers: 4
